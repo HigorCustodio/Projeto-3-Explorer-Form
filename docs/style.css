@@ -66,7 +66,11 @@ form{
 fieldset{
 
     border: none;
-
+}
+.fieldset-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap:24px;
 }
 fieldset legend{
 
@@ -101,7 +105,7 @@ fieldset legend{
 
     color: #c1bccc;
 }
-.input-wrapper input{
+.input-wrapper input, .input-wrapper textarea, .input-wrapper select{
     height: 56px;
 
     border: 1px solid #E6E6F0;
@@ -116,5 +120,32 @@ fieldset legend{
     font-size: 16px;
     line-height: 26px;
     
-    color: #C1BCCC;
+    color:#6c6a71;
+}
+.input-wrapper label span:hover{
+    color:#6c6a71;
+
+    /*usando o :hover para que melhore o contraste e a acessibilidade 
+para o usuario que precisa de acessibilidade referente a contraste
+de cores*/
+
+}
+.input-wrapper textarea{
+    padding: 0;
+
+    height:168px;
+}
+.input-wrapper select{ /*tirando setinha do select*/
+    appearance: none; /*geral(não aplica em todos os navegadores*/
+    -moz-appearance: none;/*aplicando no mozilla*/
+    -webkit-appearance: none;/*aplicando no webkit google chrome, safari e edge*/
+    
+
+    /*colocando especificamente por navegador garanto que a formatação
+     se aplicará nos navegadores que ainda não adotaram o elemento 
+     appearance como vendor profixe geral*/
+    
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position:right 24px top 50%; 
 }
